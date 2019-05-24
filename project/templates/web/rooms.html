@@ -105,32 +105,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h4>hill view room</h4>
 				<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat.</p>
 			</div>
-				<!--
+				{% for room in roomList %}
 				<div class="grids_of_2">
-					<div class="grids_of_img">
-					<img src="{% static '/images/pic4.jpg' %}" alt=""/>
-					</div>
-					<div class="grids_of_para">
-						<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-					</div>
-					<div class="clear"></div>					
-				</div>
-				<div class="grids_of_2">
-					<div class="grids_of_img">
-					<img src="{% static '/images/pic5.jpg' %}" alt=""/>
-					</div>
-					<div class="grids_of_para">
-						<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-					</div>
-					<div class="clear"></div>					
-				</div>
-				-->
-				{% for roomInfo in roomInfoList %}
-				<div class="grids_of_2">
-				    <h5>{{roomInfo.name}}</h5>
+				    <h5>{{room.name}}</h5>
+				    <div class="grids_of_img">
+					<img src="{% static room.img_path %}" alt=""/>
+				    </div>
 				    <div class="grids_of_para">
-				    <p>{{roomInfo.description}}</p>
-				    <p>price：{{ roomInfo.price }} for one day</p>
+				    <p>{{room.description}}</p>
+				    <br>
+				    <p>price：{{ room.price }}  for one day</p>
 				    </div>
 				</div>
 				<div class="clear"></div>

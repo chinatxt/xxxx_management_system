@@ -19,10 +19,7 @@ from django.contrib import admin
 import myAPP.views as views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^about/', views.about),
     url(r'^rooms.html/', views.rooms),
     url(r'^$', views.index),
     url(r'index.html', views.index),
-    url(r'^order/', views.order),
-    url(r'^orderresult/', views.orderResult)
 ]
